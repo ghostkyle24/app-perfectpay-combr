@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Refund - Perfect Pay</title>
+  <link rel="icon" href="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/dc/45/fe/dc45fe3b-1172-60fa-241c-19a873684383/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/1200x600wa.png">
+  <style>
+    body {
+      background: #f4f6fb;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .refund-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 32px 16px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .refund-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .refund-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      color: #222;
+      text-align: center;
+    }
+    .refund-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .refund-label {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .refund-input {
+      padding: 10px 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #fafafa;
+      transition: border 0.2s;
+    }
+    .refund-input:focus {
+      border: 1.5px solid #4f8cff;
+      outline: none;
+    }
+    .refund-button {
+      margin-top: 10px;
+      padding: 12px 0;
+      background: #4f8cff;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .refund-button:hover {
+      background: #2563eb;
+    }
+    .refund-success {
+      color: #2563eb;
+      background: #eaf3ff;
+      border-radius: 8px;
+      padding: 24px 12px;
+      font-size: 1.1rem;
+      text-align: center;
+      margin-top: 24px;
+      font-weight: 500;
+    }
+    @media (max-width: 500px) {
+      .refund-container {
+        padding: 16px 4px;
+        border-radius: 0;
+        min-height: 100vh;
+      }
+      .refund-title {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="refund-container">
+    <img
+      src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/dc/45/fe/dc45fe3b-1172-60fa-241c-19a873684383/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/1200x600wa.png"
+      alt="Perfect Pay Logo"
+      class="refund-logo"
+    />
+    <h1 class="refund-title">Request a Refund</h1>
+    <form class="refund-form" id="refundForm">
+      <label class="refund-label">
+        Select product
+        <select class="refund-input" id="product">
+          <option value="SignalCheck">SignalCheck</option>
+        </select>
+      </label>
+      <label class="refund-label">
+        Your email
+        <input class="refund-input" type="email" id="email" placeholder="Enter your email" required />
+      </label>
+      <label class="refund-label">
+        Note
+        <textarea class="refund-input" id="note" placeholder="Add a note (optional)" rows="3"></textarea>
+      </label>
+      <button class="refund-button" type="submit">Request Refund</button>
+    </form>
+    <div class="refund-success" id="successMsg" style="display:none;">Your refund request has been sent!</div>
+  </div>
+  <script>
+    document.getElementById('refundForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('refundForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
