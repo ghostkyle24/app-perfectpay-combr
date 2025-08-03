@@ -1,8 +1,9 @@
-import React from 'react';
-import RefundRequest from './RefundRequest';
+import RefundPage from './RefundPage/RefundPage';
 
 function App() {
-  return <RefundRequest />;
+  return (
+    <RefundPage />
+  );
 }
 
 export default App;
