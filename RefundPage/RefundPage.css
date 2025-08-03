@@ -1,3 +1,7 @@
+body {
+  background: #f4f6fb;
+}
+
 .refund-container {
   max-width: 400px;
   margin: 0 auto;
@@ -16,6 +20,7 @@
   height: 80px;
   border-radius: 16px;
   margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .refund-title {
@@ -71,6 +76,17 @@
 
 .refund-button:hover {
   background: #2563eb;
+}
+
+.refund-success {
+  color: #2563eb;
+  background: #eaf3ff;
+  border-radius: 8px;
+  padding: 24px 12px;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 24px;
+  font-weight: 500;
 }
 
 @media (max-width: 500px) {
